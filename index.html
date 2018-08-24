@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Emulando Paint</title>
+</head>
+<body>
+    <table>
+    <!-- Creo elemto canvas dentro de una tabla -->
+        <tr>
+            <td><canvas width="600" height="600" id="canvas" onmousemove="pintar(event)" onmousedown="activar()" onmouseup="desactivar()"></canvas></td>
+        <!-- Se crean las herramientas de lapiz y goma -->
+            <td class="herramientas">
+            <a href="#" onclick="lapiz();"><img id= "lapiz" src="img/lapiz.png" /></a><br />
+            <a href="#" onclick="borrador();"><img id="goma" src="img/borrador.jpg" /></a>
+        <!-- Divs con los tamaños del lapiz -->
+            <div style="width: 10px; height: 10px;" click="stamano(10);"></div><br />
+            <div style="width: 20px; height: 20px;" click="stamano(30);"></div><br />
+            <div style="width: 30px; height: 30px;" click="stamano(50);"></div><br />
+            <div style="width: 40px; height: 40px;" click="stamano(70);"></div><br />
+        <!-- Permite cambiar el color del lapiz solo en Chrome/Firefox/Opera-->
+            <input type="color" id="colores" onchange="scolor();"/><br  />
+        <!-- Enlace para descargar tu obra de arte :D -->
+            <a href="#" download="imagen.jpg" id="guardarimagen" >Guardar como imagen</a>
+            </td>
+        </tr>
+    </table>
+    <script src="js/index.js"></script>
+</body>
+</html>
